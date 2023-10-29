@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build the Docker image') {
             steps {
-                sh 'sudo docker build -t htsimage /var/lib/jenkins/workspace/pipeline'
+                sh 'sudo docker build -t htsimage /var/lib/jenkins/workspace/kubernetes'
                 sh 'sudo docker tag htsimage vignesh755/htsimage:latest'
                 sh 'sudo docker tag htsimage vignesh755/htsimage:${BUILD_NUMBER}'
             }
